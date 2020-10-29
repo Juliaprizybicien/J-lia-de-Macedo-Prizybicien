@@ -1,1 +1,144 @@
-# J-lia-de-Macedo-Prizybicien
+#include<stdio.h>
+#define TAM 5
+/*
+Linha 0 = feminino
+Linha 1 = masculino
+Linha 2 = infantil
+*/
+struct loja
+{
+    int codigo, valor;
+    char tamanho[20], modelo[30], genero[30], marca[30];
+
+}roupa[3][TAM];
+
+void apresentacao()
+{
+    system("cls");
+    printf("(1) Inserir nova peca de roupa\n");
+    printf("(2) Consultar peca em estoque\n");
+    printf("(3) Editar peca\n");
+    printf("(4) Remover peca\n");
+     printf("(5) calculadora basica de compra \n");
+     printf("(6) calculadora de condicao de pagamento  \n");
+    printf("(7) Sair\n");
+}
+
+void add(int i, int j)
+{
+    system("cls");
+    fflush(stdin);
+    printf("Digite o modelo da roupa\n");
+    gets(roupa[i][j].modelo);
+    system("cls");
+    printf("Digite o genero da roupa\n");
+    gets(roupa[i][j].genero);
+    system("cls");
+    printf("Digite a marca\n");
+    gets(roupa[i][j].marca);
+    system("cls");
+    printf("Digite o tamanho em letras\n");
+    gets(roupa[i][j].tamanho);
+    system("cls");
+    printf("Digite o codigo de estoque\n");
+    scanf("%d", &roupa[i][j].codigo);
+    system("cls");
+    printf("Digite o valor\n");
+    scanf("%d", &roupa[i][j].valor);
+    system("cls");
+}
+
+void mostrar(int i, int j)
+{
+    system("cls");
+    printf("modelo da roupa: %s \n", roupa[i][j].modelo);
+    printf("genero da roupa: %s \n", roupa[i][j].genero);
+    printf("marca da roupa: %s \n", roupa[i][j].marca);
+    printf("tamanho da roupa: %s \n", roupa[i][j].tamanho);
+    printf("codigo de estoque: %d \n", roupa[i][j].codigo);
+    printf("valor da peca: %d \n", roupa[i][j].valor);
+}
+
+void edicao(int i, int j)
+{
+    system("cls");
+    fflush(stdin);
+    printf("modelo da roupa\n");
+    gets(roupa[i][j].modelo);
+    system("cls");
+    printf("Digite o genero da roupa\n");
+    gets(roupa[i][j].genero);
+    system("cls");
+    printf("Digite a marca da roupa\n");
+    gets(roupa[i][j].marca);
+    system("cls");
+    printf("Digite o tamanho da roupa\n");
+    gets(roupa[i][j].tamanho);
+    system("cls");
+    printf("Digite o codigo de estoque\n");
+    scanf("%d", &roupa[i][j].codigo);
+    system("cls");
+    printf("Digite o valor\n");
+    scanf("%d", &roupa[i][j].valor);
+    system("cls");
+}
+float multiplicar (float x, float y)
+{
+    float resmulti;
+    resmulti=x*y;
+    return (resmulti);
+}
+    float somar (float x, float y)
+{
+    float ressoma;
+    ressoma=x+y;
+    return(ressoma);
+}
+     float dividir (float x,float y)
+{
+    float resdivi;
+    resdivi= x/y;
+    return (resdivi);
+}
+    float subtrair (float x,float y)
+{
+     float ressub;
+    ressub= x-y;
+    return(ressub);
+}
+int forma (int valor, int venda)
+{
+    float res;
+        switch(valor){
+
+  case 1:
+        res=venda-(venda/10);
+          break;
+
+    case 2:
+         res=venda-(venda/20);
+           break;
+
+
+    case 3:
+         res=venda;
+           break;
+
+
+    case 4:
+       res=venda +(venda*0.05);
+           break;
+
+
+   case 5:
+          res=venda-(venda/12.5);
+           break;
+
+
+    case 6:
+         res=venda-(venda/14.3);
+           break;
+
+        }
+        return (res);
+  }
